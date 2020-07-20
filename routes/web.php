@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+//登陆页面
+Route::any('/login','Fl\LoginController@login');
+//处理数据
+Route::any('/index/{username?}/{password?}','Fl\LoginController@index');
+//退出页面
+Route::any('/fl/loginout/','Fl\LoginController@loginout');
